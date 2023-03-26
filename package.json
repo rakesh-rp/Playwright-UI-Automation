@@ -1,0 +1,18 @@
+{
+  "name": "playwright-framework",
+  "version": "1.0.0",
+  "description": "Playwright TypeScript Framework with Playwright Test Runner",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "keywords": [
+    "Playwright Test Runner",
+    "Playwright Typescript Framework"
+  ],
+  "author": "Rakesh Ravi Prakash",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.31.2"
+  }
+}
