@@ -11,19 +11,32 @@ export default class Wrapper {
         has?: Locator,
         hasText?: string
     }): Promise<Locator> {
+        //improve this handling of windows
         if (options?.tabID) {
             this.page.context().pages()[options.tabID]
         }
         if (options?.frame) {
-            this.page.frameLocator(options.frame).locator(value, {
-                has: options?.has,
-                hasText: options?.hasText
-            });
+            return this.page.frameLocator(options.frame).locator(value);
         }
+
         return this.page.locator(value, {
             has: options?.has,
             hasText: options?.hasText
         })
     }
-
+    //To Load the Url of the Page
+    public getUrl(): string {
+        return this.page.url();
+    }
+    // To close the browser or a particular tab 
+    public async closeTab(options?: {
+        tabId?: number
+    }) {
+        if (options?.tabId) {
+            await this.page.context().pages()[options?.tabId].close();
+        }
+        else {
+            await this.page.close();
+        }
+    }
 }
