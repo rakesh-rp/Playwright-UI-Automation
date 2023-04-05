@@ -1,6 +1,7 @@
 import Wrapper from "../base/utils/wrapper";
 
 export default class LoginPage extends Wrapper{
+    static enterUserName: any;
 
     public async enterUserName (username: string) {
         const user = await this.findLocator("input[name='email']");

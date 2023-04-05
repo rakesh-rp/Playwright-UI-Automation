@@ -1,6 +1,6 @@
 import Wrapper from "../base/utils/wrapper";
 
-export default class framePage extends Wrapper {
+export default class FramePage extends Wrapper {
 
     public async enterFirstName(firstName: string) {
         const fName = await this.findLocator("input[name='fname']",
