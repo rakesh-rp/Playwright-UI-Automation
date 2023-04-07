@@ -1,0 +1,21 @@
+version: 2.1
+jobs:
+  run-test:
+    docker:
+      - image: mcr.microsoft.com/playwright:v1.32.0-focal
+# Steps for the job
+    steps:
+     - checkout
+     - run:
+         name: Download dependency
+         command: npm ci
+     - run:
+         name: Run Tests
+         command: npm run Tests
+     - store_test_results:
+         path: results.xml
+# invoke jobs via workflows
+workflows:
+  run-test-workflow:
+    jobs:
+        - run-test 

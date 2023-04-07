@@ -4,7 +4,9 @@
   "description": "Playwright TypeScript Framework with Playwright Test Runner",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test"
+    "postinstall": "npx playwright install",
+    "test": "npx playwright test",
+    "report": "npx playwright show-report"
   },
   "keywords": [
     "Playwright Test Runner",
